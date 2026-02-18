@@ -25,3 +25,17 @@ npm run dev
 - **Dashboard** (`/`) — Overview inventario, usa computed aggregati dallo store
 - **Prodotti** (`/products`) — Lista CRUD con filtri persistenti e cache invalidation
 - **Impostazioni** (`/settings`) — Preferenze con localStorage
+- **Dettaglio Prodotto** (`/products/:id`) — Usa composable + wrapper + utility (DRY patterns)
+- **Dettaglio Magazzino** (`/warehouses/:id`) — Variante semplice senza extra tab
+
+## Pattern DRY (articolo "3 pattern per eliminare la duplicazione")
+
+File aggiunti per dimostrare i pattern:
+
+| File | Pattern |
+|------|---------|
+| `composables/useEntityDetail.ts` | Composable per setup condiviso |
+| `components/EntityDetailPage.vue` | Wrapper component con slot |
+| `helpers/fileDownload.ts` | Utility function estratta |
+| `pages/products/[id].vue` | Pagina che usa tutti e 3 i pattern |
+| `pages/warehouses/[id].vue` | Variante semplice (nessun extra tab) |
